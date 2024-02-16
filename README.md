@@ -44,5 +44,3 @@ Available commands are:
 > In separate terminal run
 
 `npm run run:loader`
-
-Big thanks to Stephen Grider for an amazing course on Python, that got me doing this in JS.
