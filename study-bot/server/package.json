@@ -1,0 +1,28 @@
+{
+  "name": "lang-server",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "chain": "bun chain.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@langchain/anthropic": "^0.0.9",
+    "@langchain/community": "0.0.24",
+    "@langchain/core": "^0.1.20",
+    "@langchain/openai": "^0.0.13",
+    "chalk": "^5.3.0",
+    "chromadb": "^1.8.1",
+    "figlet": "^1.7.0",
+    "langchain": "0.1.11",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
+  }
+}

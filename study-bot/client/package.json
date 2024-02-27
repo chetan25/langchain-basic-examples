@@ -1,38 +1,49 @@
 {
-  "name": "my-qwik-basic-starter",
-  "description": "Demo App with Routing built-in (recommended)",
+  "name": "my-qwik-library-name",
+  "version": "0.0.1",
+  "description": "Create a reusable Qwik component library",
+  "main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./lib-types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib-types/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "lib-types"
+  ],
   "engines": {
     "node": ">=15.0.0"
   },
-  "private": true,
-  "trustedDependencies": [
-    "sharp"
-  ],
+  "private": false,
   "type": "module",
   "scripts": {
     "build": "qwik build",
-    "build.client": "vite build",
-    "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "build.lib": "vite build --mode lib",
+    "build.types": "tsc --emitDeclarationOnly",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "preview": "qwik build preview && vite preview --open",
+    "release": "np",
     "start": "vite --open --mode ssr",
+    "test": "echo \"No test specified\" && exit 0",
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.4.4",
-    "@builder.io/qwik-city": "^1.4.4",
+    "@builder.io/qwik": "1.4.5",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
-    "eslint-plugin-qwik": "^1.4.4",
+    "eslint-plugin-qwik": "latest",
+    "np": "^8.0.4",
     "prettier": "^3.2.4",
     "typescript": "5.3.3",
     "undici": "*",
